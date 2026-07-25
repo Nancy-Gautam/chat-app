@@ -1,0 +1,38 @@
+/* ============================================
+   Design tokens — "Let's Chat"
+   A note-and-ink theme: deep aubergine ink,
+   warm paper background, violet + mint accents.
+   Folded-note message bubbles are the signature.
+   ============================================ */
+:root {
+  /* Color */
+  --ink-950: #150f28;
+  --ink-900: #1b1435;
+  --ink-800: #241c47;
+  --ink-700: #342a63;
+  --paper: #faf8f4;
+  --paper-dim: #f1eee7;
+  --line: #e7e2d8;
+
+  --violet: #5b4eff;
+  --violet-dim: #ece9ff;
+  --mint: #21c7a8;
+  --coral: #ff6b6b;
+
+  --text-900: #201a34;
+  --text-600: #59516f;
+  --text-400: #8b84a1;
+  --text-on-ink: #f1eefb;
+  --text-on-ink-dim: #b6acd8;
+
+  /* Type */
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Radius / shadow */
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 9px;
+  --shadow-soft: 0 8px 24px -8px rgba(21, 15, 40, 0.18);
+  --shadow-pop: 0 14px 34px -10px rgba(91, 78, 255, 0.35);
+}

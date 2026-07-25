@@ -1,0 +1,214 @@
+@import "./tokens.css";
+
+/* ---------- Story bar (row of avatars at top of sidebar) ---------- */
+.story-bar {
+  display: flex;
+  gap: 14px;
+  padding: 4px 16px 16px;
+  overflow-x: auto;
+}
+
+.story-avatar-btn {
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.story-ring {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.story-ring.has-story {
+  background: linear-gradient(135deg, var(--violet), var(--mint));
+  padding: 3px;
+}
+
+.story-ring.has-story .avatar {
+  border: 2px solid var(--ink-900);
+}
+
+.story-ring.add-story {
+  position: relative;
+}
+
+.story-plus {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--violet);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink-900);
+}
+
+.story-label {
+  font-size: 11px;
+  color: var(--text-on-ink-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60px;
+}
+
+/* ---------- Story viewer (fullscreen) ---------- */
+.story-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: grid;
+  place-items: center;
+  z-index: 200;
+}
+
+.story-viewer {
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  max-height: 780px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.story-progress-row {
+  display: flex;
+  gap: 4px;
+  padding: 10px 10px 0;
+}
+
+.story-progress-track {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.story-progress-fill {
+  height: 100%;
+  background: #fff;
+  transition: width 0.05s linear;
+}
+
+.story-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  color: #fff;
+}
+
+.story-header-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.story-header-time {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.story-close-btn {
+  margin-left: auto;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 13px;
+}
+
+.story-content {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.story-tap-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 35%;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.story-tap-left {
+  left: 0;
+}
+
+.story-tap-right {
+  right: 0;
+}
+
+.story-media {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.story-text {
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+  text-align: center;
+  padding: 40px;
+  line-height: 1.4;
+}
+
+.story-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+  right: 16px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px 14px;
+  border-radius: 10px;
+}
+
+.story-delete-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 12.5px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 500px) {
+  .story-viewer {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0;
+  }
+}
